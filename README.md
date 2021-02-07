@@ -8,11 +8,6 @@ Luhn control digit calculation for Go.
 >
 > – Wikipedia
 
-## Installation
-```shell
-go get github.com/EClaesson/go-luhn
-```
-
 ## Usage
 ```go
 package main
