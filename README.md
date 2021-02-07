@@ -18,7 +18,6 @@ go get github.com/EClaesson/go-luhn
 package main
 
 import (
-    "fmt"
     luhn "github.com/EClaesson/go-luhn"
 )
 
