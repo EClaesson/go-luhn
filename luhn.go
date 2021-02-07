@@ -30,28 +30,21 @@ func GetControlDigit(num string) (int, error) {
 	}
 
 	mult := 2
-	valStr := ""
+	sum := 0
 
 	for i := range digits {
 		digit := digits[len(digits)-i-1]
-		valStr += strconv.Itoa(digit * mult)
 
-		if mult == 1 {
-			mult = 2
-		} else {
-			mult = 1
+		vals, _ := stringToDigits(strconv.Itoa(digit * mult))
+
+		for _, val := range vals {
+			sum += val
 		}
+
+		mult = (mult % 2) + 1
 	}
 
-	valDigits, _ := stringToDigits(valStr)
-
-	valSum := 0
-
-	for _, val := range valDigits {
-		valSum += val
-	}
-
-	control := 10 - (valSum % 10)
+	control := 10 - (sum % 10)
 
 	if control == 10 {
 		control = 0
